@@ -541,16 +541,15 @@ button {
 @media (min-width: 768px) {
 
   body {
-    max-width: 480px;
-    margin: 0 auto;
-
+    max-width: none;
+    margin: 0;
     background-color: #000;
   }
 
   .header {
-    width: 480px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    left: 0;
+    transform: none;
   }
 
   .hero h1 {
