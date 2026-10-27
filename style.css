@@ -15,12 +15,13 @@ html {
 body {
   background-color: #0a0a0a;
   color: #f5f5f5;
-  font-family:
-    "Inter",
-    "Noto Sans JP",
-    sans-serif;
+
+  /* 英語・日本語共にラグジュアリーなフォントに指定 */
+  font-family: "Cormorant Garamond", "Shippori Mincho", "Noto Sans JP", serif;
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  /* 全体の文字間隔を少し広げて上品に */
 }
 
 img {
@@ -36,6 +37,63 @@ a {
 
 button {
   font: inherit;
+}
+
+.hero h1 {
+  font-size: clamp(56px, 16vw, 84px);
+  /* 線の細さを補うため少し大きく */
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: 0.06em;
+}
+
+.products-header h1,
+.cart-header h1 {
+  font-size: 40px;
+  /* 38px〜42pxの絶妙なバランス */
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+/* 3. 各セクションの小見出し（H2） */
+h2,
+.section-heading h2,
+.product-hero-info h1 {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+/* 4. ラベル（COLLECTION / PRODUCTS / FEATURES など） */
+.hero-label,
+.section-label {
+  font-size: 11px;
+  /* 10px -> 11px */
+  letter-spacing: 0.3em;
+  /* 文字間を広くすることで上品に */
+  text-transform: uppercase;
+}
+
+/* 5. ボタンテキスト */
+.primary-button,
+.add-cart-button,
+.checkout-button {
+  font-size: 14px;
+  /* そのままでOK */
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  /* ボタン内の字間を少し広く */
+}
+
+/* 6. 本文・説明文 */
+.hero-description,
+.section-text,
+.product-hero-description {
+  font-size: 14px;
+  /* そのままでOK */
+  line-height: 2.0;
+  /* 行間をゆったり開けると美しい */
+  color: rgba(255, 255, 255, 0.7);
 }
 
 
@@ -61,12 +119,12 @@ button {
 
 /* Logo */
 .logo {
-  font-size: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  /* 20px -> 24px に微増 */
   font-weight: 400;
-  letter-spacing: 0.18em;
-  color: #fff;
-  text-decoration: none;
-  flex-shrink: 0;
+  letter-spacing: 0.3em;
+  /* ゆったりした高級感 */
 }
 
 /* Right-side icons */
@@ -125,6 +183,59 @@ button {
   box-sizing: border-box;
   transform: none !important;
   transition: none !important;
+}
+
+/* ========================================
+   Empty Cart State
+======================================== */
+
+.empty-cart {
+  padding: 60px 20px 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin: 20px 0 40px;
+}
+
+.empty-cart-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.empty-cart h2 {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.empty-cart-text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 32px;
+}
+
+.empty-cart-btn {
+  min-width: 200px;
+  height: 48px;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
 }
 
 /* ========================================
@@ -234,7 +345,6 @@ button {
 /* ========================================
    Hero
 ======================================== */
-
 .hero {
   min-height: 100svh;
   padding-top: 64px;

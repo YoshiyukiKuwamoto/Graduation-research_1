@@ -163,14 +163,23 @@ function displayCart() {
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = `
             <div class="empty-cart">
-                <p>カートに商品がありません。</p>
-                <a href="products.html">PRODUCTSを見る</a>
+                <div class="empty-cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
+                        <circle cx="7.5" cy="18.5" r="1.5" />
+                        <circle cx="16.5" cy="18.5" r="1.5" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h2l.6 3m0 0L7 15h10l2-7H5.6z" />
+                    </svg>
+                </div>
+                <h2>カートに商品がありません</h2>
+                <p class="empty-cart-text">お気に入りの商品を見つけて、<br>あなただけの音を見つけましょう。</p>
+                <a href="products.html" class="primary-button empty-cart-btn">
+                    PRODUCTSを見る
+                </a>
             </div>
         `;
         updateCartSummary();
         return;
     }
-
     // 各アイテムの価格表示を ¥--,--- に統一
     // ※ color が無い古いデータにも対応するため (item.color || 'Black') を渡します
     cartItemsContainer.innerHTML = cart.map(item => {
